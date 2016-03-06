@@ -1,0 +1,28 @@
+package taranet;
+
+public class Simple04 {
+	
+	public static void main(String[] args){
+		 int num=12345;
+		 int sum=0;
+		for(int i=num;i<=0;i/=10){
+			System.out.println(i);
+			int n=i%10;
+			sum = sum*10+n;
+			System.out.println(n);
+		}
+	}
+	
+//	public static void resever(int num) {
+//		//123456翻转  654321
+//		// 
+//		int sum=0;
+//		for(int i=num;i<=0;i/=10){
+//			System.out.println(i);
+//			int n=i%10;
+//			sum = sum*10+n;
+//			System.out.println(n);
+//		}
+//		 
+	//}
+}

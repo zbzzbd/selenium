@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="3" name="Failed suite [suite]">
+  <test name="test12">
+    <classes>
+      <class name="untils.TestNGLearn">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="TestNgLearn"/>
+        </methods>
+      </class> <!-- untils.TestNGLearn -->
+    </classes>
+  </test> <!-- test12 -->
+</suite> <!-- Failed suite [suite] -->

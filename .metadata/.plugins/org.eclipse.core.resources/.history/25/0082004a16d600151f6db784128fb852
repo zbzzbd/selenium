@@ -1,0 +1,9 @@
+package taranet;
+
+public class DateTimeDemo {
+	public static void main(String[] args) {
+		long times = System.currentTimeMillis();
+		System.out.println(times);
+	}
+
+}

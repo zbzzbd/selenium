@@ -1,0 +1,19 @@
+package taranet;
+
+public class HashMapDemo {
+	public static void main(String[] args) {
+		HashMap<String,Player> table = new HashMap<String,Player>();
+		
+	}
+}
+
+class Player{
+	String name;
+	public Player(String name){
+		this.name = name;
+		
+	}
+	public String toString(){
+		return name;
+	}
+}

@@ -1,0 +1,28 @@
+package taranet;
+
+import java.util.HashMap;
+
+public class HashMapDemo {
+	public static void main(String[] args) {
+		HashMap<String,Player> table = new HashMap<String,Player>();
+		table.put("东", new Player("xiao bei"));
+		table.put("西",new Player("xiao xi"));
+		//是否包含某个key值
+		System.out.println(table.containsKey("东"));
+		//通过key 找到 value
+		System.out.println(table.get("东"));
+		
+	}
+}
+
+class Player{
+	String name;
+	public Player(String name){
+		this.name = name;
+		
+	}
+	@Override
+	public String toString(){
+		return name;
+	}
+}

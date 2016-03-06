@@ -1,0 +1,30 @@
+package taranet;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class DateTimeDemo {
+	public static void main(String[] args) {
+		long times = System.currentTimeMillis();
+		System.out.println(times);
+		
+		long time =0; //1970.1.1
+		Date date = new Date();
+		System.out.println(date);
+		
+		date.setTime(time);
+		System.out.println(date);
+		
+//		Calendar  cal = new GregorianCalendar();
+//		Calendar cal2 = Calendar.getInstance();
+//		System.out.println(cal);
+//		cal.setTime(date);
+		
+		Date d = cal.getTime();
+		long t = d.getTime();
+		System.out.println(t);
+		
+	}
+
+}

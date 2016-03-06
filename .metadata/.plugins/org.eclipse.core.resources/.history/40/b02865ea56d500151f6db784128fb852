@@ -1,0 +1,20 @@
+package taranet;
+
+import java.util.*;
+
+import net.sf.json.JSONArray;
+
+public class JsonSample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListToJson();
+	}
+	public static void ListToJson(){
+		List list = new ArrayList();
+		list.add("first");
+		list.add("second");
+		JSONArray json = JSONArray.fromObject(list);
+		System.out.println(json);
+	}
+}

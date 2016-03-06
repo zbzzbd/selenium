@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="suite3">
+ 	 
+ 	 <parameter name="test1" value="Tank" />
+ 	 <parameter name="test1" value="xiao" />
+ 	<test name="test3">
+ 		<classes>
+ 			<class name="untils.ParametersTest" />
+ 		</classes>
+ 	</test>
+</suite>

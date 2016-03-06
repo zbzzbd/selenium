@@ -1,0 +1,39 @@
+package taranet;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class DateTimeDemo {
+	public static void main(String[] args) {
+		long times = System.currentTimeMillis();
+		System.out.println(times);
+		
+		long time =0; //1970.1.1
+		Date date = new Date();
+		System.out.println(date);
+		
+		date.setTime(time);
+		System.out.println(date);
+		
+		Calendar  cal = new GregorianCalendar();
+		Calendar cal2 = Calendar.getInstance();
+		System.out.println(cal);
+		cal.setTime(date);
+		
+		Date d = cal.getTime();
+		long t = d.getTime();
+		System.out.println(t);
+		
+		//获取当前时间，并按照指定格式显示
+		//把date 或calendar 类型 的数据转换成为指定格式的字符串
+		String format = "yyyy-mm-dd HH:mm:ss";
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		Date now = new Date();//当前系统时间
+		System.out.println(sdf.format(now));
+		
+		
+	}
+
+}

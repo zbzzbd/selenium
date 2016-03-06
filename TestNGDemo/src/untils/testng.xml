@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite" verbose="3"> 
+	<test name="test12">
+	<classes>
+		<class name="untils.TestNGLearn">
+		<methods>
+			<include name="beforeClass" />
+			<include name="afterClass" />
+			<include name="TestNgLearn" />
+		</methods>
+		</class>
+	</classes>
+	</test>
+ 	
+</suite>
+

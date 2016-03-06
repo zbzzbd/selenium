@@ -1,0 +1,15 @@
+package taranet;
+
+import java.util.ArrayList;
+
+public class CardDemo {
+	public static void main(String[] args){
+		ArrayList cards = new ArrayList();
+		cards.add(new Card(Card.SPADE,Card.TEN));
+		cards.add(Card.SPADE,Card.JACK);
+		cards.add(Card.SPADE, Card.QUEEN);
+		cards.add(Card.SPADE,Card.KING);
+		cards.add(Card.SPADE,Card.ACE);
+		System.out.println(cards);
+	}
+}

@@ -1,0 +1,10 @@
+package taranet;
+import java.util.*;
+public class IteratorDemo {
+	public static void main(String[] args){
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("abc");
+		list.add("cde");
+		list.add("sdf");
+	}
+}

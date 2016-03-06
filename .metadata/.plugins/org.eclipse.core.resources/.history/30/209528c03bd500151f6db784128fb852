@@ -1,0 +1,27 @@
+package taranet;
+import java.util.*;
+public class CollectionsDemo {
+	public static void main(String[] args){
+		
+	}
+	
+}
+
+class Car implements Comparable {
+	int id;
+	public Car(int id) {
+		this.id= id;
+	}
+	public String toString(){
+		return Integer.toString(id);
+	}
+	
+	@Override
+	public int compareTo(Object obj) {
+		// TODO Auto-generated method stub
+		Car car = (Car)obj;
+		
+		return id - car.id;
+	}
+	
+}

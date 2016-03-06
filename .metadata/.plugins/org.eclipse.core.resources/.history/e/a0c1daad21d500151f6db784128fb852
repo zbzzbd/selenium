@@ -1,0 +1,16 @@
+package taranet;
+
+import java.util.regex.Pattern;
+
+public class Sample03 {
+	public static void main(String[] args) {
+		System.out.println(test1("aaaa"));
+	}
+	
+	public static boolean test1(String str){
+		boolean b  = Pattern.matches("a*b", str);
+		return b;
+	}
+	
+	
+}

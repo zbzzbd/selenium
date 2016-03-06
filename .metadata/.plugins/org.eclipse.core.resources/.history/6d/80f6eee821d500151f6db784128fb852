@@ -1,0 +1,25 @@
+package taranet;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Sample03 {
+	public static void main(String[] args) {
+		System.out.println(test1("aaaa"));
+		System.out.println(test2("00000"));
+	}
+	
+	public static boolean test1(String str){
+		boolean b  = Pattern.matches("a*b", str);
+		return b;
+	}
+	/**
+	 * 检查str 是否为整数
+	 * */
+	public static boolean test2(String str){
+		Pattern p = Pattern.compile("[0-9]+");
+		Matcher matcher = p.matcher(str);
+		return matcher.matches();
+	}
+	
+}

@@ -1,0 +1,26 @@
+package taranet;
+
+public class StringToInt {
+
+	
+	public static void main(String[] args){
+		String s="123";
+		char[] j=s.toCharArray();
+		int tmp=0;
+		for(int i=0;i<j.length;i++){
+		int m=0;
+		m=(int)Math.pow(10, j.length-(i+1));
+		tmp+=(s.charAt(i)-48)*m; 
+		}
+		System.out.println(tmp);
+	}
+	
+	
+	public static void stringPaseToInt (String s){
+		s=s.trim();
+		
+	}
+}
+//1    10  2
+//2    10  1
+//3    10  0
