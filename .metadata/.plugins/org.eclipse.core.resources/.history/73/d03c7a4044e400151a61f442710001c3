@@ -1,0 +1,34 @@
+package cn.gloryroad.util;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelUtil {
+	private static XSSFSheet ExcelWSheet; //工作的sheet
+	private static XSSFWorkbook ExcelWBook;
+	private static XSSFCell Cell; //列
+	private static XSSFRow  Row; //行
+	
+	//设定要操作excel 的 文件路径和excel 文件中的sheet名称
+	//在读，写excel 的时候，均需要先调用此方法，设定要操作的execel文件路径和要操作的sheet名称
+	public static void setExecelFile(String path,String SheetName){
+		FileInputStream ExcelFile;
+		
+		try {
+			//实例化execl 文件的fileInputStream
+			ExcelFile = new FileInputStream(path);
+			//实例化 execl 文件的xssfworkbook 对象
+			ExcelWBook = new XSSFWorkbook(ExcelFile);
+			ExcelWSheet = ExcelWBook.getSheet(SheetName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+}

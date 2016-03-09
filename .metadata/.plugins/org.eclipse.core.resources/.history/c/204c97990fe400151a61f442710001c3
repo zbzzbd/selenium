@@ -1,0 +1,24 @@
+package cn.golryroad.testScripts;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import cn.gloryroad.pageObjects.LoginPage;
+
+public class TestMail126Login {
+	public WebDriver driver;
+	String baseUrl = "http://mail.126.com/";
+	
+	@Test
+	public void testMailLogin() throws Exception{
+		driver.get(baseUrl);
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.userName().sendKeys("testman1987");
+		loginPage.password().sendKeys("wulaoshi1987");
+		loginPage.loginButton().click();
+		Thread.sleep(5000);
+		Assert.assertTrue(driver.getPageSource().contains("未读邮件"));
+	}
+	
+}

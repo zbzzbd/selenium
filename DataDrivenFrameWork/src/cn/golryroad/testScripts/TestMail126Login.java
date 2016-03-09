@@ -1,0 +1,46 @@
+package cn.golryroad.testScripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import cn.gloryroad.appModules.Login_Action;
+import cn.gloryroad.pageObjects.LoginPage;
+
+public class TestMail126Login {
+	public WebDriver driver;
+	String baseUrl = "http://exmail.qq.com/login";
+	
+	@BeforeMethod
+	public void beforeMethod(){
+		driver = new FirefoxDriver();//打开浏览器
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	@Test
+	public void testMailLogin() throws Exception{
+		Login_Action.execute(driver, "zhangbingzhen@chinarun.com", "521rong");
+		Thread.sleep(5000);
+		Assert.assertTrue(driver.getPageSource().contains("收信"));
+	}
+//	public void testMailLogin() throws Exception{
+//		driver.get(baseUrl);
+//		LoginPage loginPage = new LoginPage(driver);
+//		loginPage.userName().sendKeys("zhangbingzhen@chinarun.com");
+//		loginPage.password().sendKeys("521rong");
+//		loginPage.loginButton().click();
+//		Thread.sleep(5000);
+//		Assert.assertTrue(driver.getPageSource().contains("未读邮件"));
+//	}
+	
+	
+	
+	@AfterMethod
+	public void afterMethod(){
+		driver.quit();
+	}
+}

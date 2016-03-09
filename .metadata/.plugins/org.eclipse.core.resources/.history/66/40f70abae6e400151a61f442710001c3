@@ -1,0 +1,81 @@
+package cn.gloryroad.util;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelUtil {
+	private static XSSFSheet ExcelWSheet; //工作的sheet
+	private static XSSFWorkbook ExcelWBook;
+	private static XSSFCell Cell; //列
+	private static XSSFRow  Row; //行
+	
+	//设定要操作excel 的 文件路径和excel 文件中的sheet名称
+	//在读，写excel 的时候，均需要先调用此方法，设定要操作的execel文件路径和要操作的sheet名称
+	public static void setExecelFile(String path,String SheetName){
+		FileInputStream ExcelFile;
+		
+		try {
+			//实例化execl 文件的fileInputStream
+			ExcelFile = new FileInputStream(path);
+			//实例化 execl 文件的xssfworkbook 对象
+			ExcelWBook = new XSSFWorkbook(ExcelFile);
+			ExcelWSheet = ExcelWBook.getSheet(SheetName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//读取excel 文件指定单元格
+	public static String getCellData(int RowNum,int ColNum) throws Exception{
+		try{
+			Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+			/***
+			 * 如果单元格的内容未字符串类型，则使用getStringcellvalue() 方法获取单元格的内容
+			 * 如果单元格的内容未数字类型，则使用getnumericcellvalue() 方法获取单元格的内容
+			 * 注意：getNumericCellValue() 方法返回值为double，必须强转化
+			 * 在cell.getnumericcellvalue() 前面增加 “”，用于强制转换double 类型到 String 类型， 不加“”会抛出　double 类型无法转换string 类型
+			 * 
+			 * */
+			String CellData = Cell.getCellType() == XSSFCell.CELL_TYPE_STRING?Cell.getStringCellValue() +"":String.valueOf(Math.round(Cell.getNumericCellValue()));
+			return CellData;
+			
+		}catch(Exception e){
+  			return "";
+		} 	
+	}
+	
+	
+//在excel 文件的执行单元格写入输入
+	public static void setCellData(int RowNum,int Column,String Result) throws Exception{
+		try{
+			//获取excel文件的对象
+			Row = ExcelWSheet.getRow(RowNum);
+			Cell = Row.getCell(Column,Row.RETURN_BLANK_AS_NULL);
+			if (Cell == null) {
+				//当单元格对象是null的时候，则创建单元格
+				//如果单元格为空，无法直接调用单元格对象的setCellValue 方法 设定单元格的值
+				Cell = Row.createCell(Column);
+				Cell.setCellValue(Result);
+			} else {
+				//单元格中有内容，则可以调用单元格
+				Cell.setCellValue(Result);
+			}
+			FileOutputStream fileOut = new FileOutputStream(Constant.TestDataExcelFilePath);
+			//将内容写入excel 文件中
+			ExcelWBook.write(fileOut);
+			fileOut.flush();
+			//关闭文件输出流对象
+			fileOut.close();
+		}catch(Exception e){
+		  throw (e);
+		}
+		
+	}
+}

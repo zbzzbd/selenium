@@ -1,0 +1,18 @@
+package cn.gloryroad.pageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import cn.gloryroad.util.ObjectMap;
+
+public class AddressBookPage {
+		private WebElement element = null;
+		private ObjectMap objectMap = new ObjectMap("/Users/zhangbingzhen/java_dev/DataDrivenFrameWork/objectMap.properties");
+		private WebDriver driver;
+		
+		public AddressBookPage( WebDriver driver){
+			this.driver =driver;
+		}
+		
+		
+}

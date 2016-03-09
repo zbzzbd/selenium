@@ -1,0 +1,17 @@
+package cn.gloryroad.appModules;
+
+import org.openqa.selenium.WebDriver;
+
+import cn.gloryroad.pageObjects.LoginPage;
+
+public class Login_Action {
+	public static void execute(WebDriver driver,String userName,String password) throws Exception{
+		
+		driver.get("http://exmail.qq.com/login");
+		LoginPage  loginPage = new LoginPage(driver);
+		loginPage.userName().sendKeys(userName);
+		loginPage.password().sendKeys(password);
+		loginPage.loginButton().click();
+		Thread.sleep(5000);
+	}
+}

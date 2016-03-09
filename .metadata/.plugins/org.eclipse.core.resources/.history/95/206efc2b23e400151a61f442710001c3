@@ -1,0 +1,13 @@
+126mail.loginPage.username=id>inputuin
+126mail.loginPage.password=id>pp
+126mail.loginPage.loginbutton=id>btlogin
+#通讯录
+126mail.homePage.addressbook=xpath>//*[@id="navBarTd"]/li[3]/a  
+#新建联系人
+126mail.addressbook.createContactPerson=xpath>//*[@id="nav"]/div[1]/div/a[1]
+#姓名
+126.mail.addressbook.contactPersonName=name>oName
+#电子邮箱
+126.mail.addressbook.contactPersonEmail=name>oEmail
+#手机号码
+126.mail.addressbook.contactPersonMoblie=name>oTel

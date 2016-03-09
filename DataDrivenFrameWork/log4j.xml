@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration  SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+<!-- 将log日志打印到日志文件中 -->
+<appender name="fileAppender" class="org.apache.log4j.FileAppender">
+<!--定义了日志级别  -->
+<param name="Threshold" value="info"/>
+<!-- 定义了日志文件的名称 -->
+<param name="FILE" VALUE="Mail126TestLogfile.log"/>
+
+<layout class="org.apache.log4j.PatternLayout">
+<!-- 定义了日志的格式信息  ％d 表示日志年月日信息， ％5表示日志级别，［％{1｝］ logger 对象的名字， ％m 代表打印具体的log信息， ％n表示打印一个回车 -->
+<param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n"/>
+
+</layout>
+</appender>
+<root>
+<level value="INFO"/>
+<appender-ref ref="fileAppender" />
+</root>
+</log4j:configuration>
